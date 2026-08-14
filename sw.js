@@ -1,4 +1,4 @@
-const CACHE_NAME = "vocab-app-v1";
+const CACHE_NAME = "vocab-app-v2";
 
 const FILES_TO_CACHE = [
   "./",
@@ -20,5 +20,17 @@ self.addEventListener("fetch", event => {
     caches.match(event.request).then(response => {
       return response || fetch(event.request);
     })
+  );
+});
+
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(
+        keys
+          .filter(key => key !== CACHE_NAME)
+          .map(key => caches.delete(key))
+      )
+    )
   );
 });
