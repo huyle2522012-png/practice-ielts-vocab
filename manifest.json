@@ -1,0 +1,17 @@
+{
+  "name": "Luyện Từ Vựng Tiếng Anh",
+  "short_name": "Luyện Từ Vựng",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f9",
+  "theme_color": "#3b6ff0",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "Icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
